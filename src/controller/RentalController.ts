@@ -13,12 +13,12 @@ export const BetweenDates = (from: Date | string, to: Date | string) =>
 export const isBookRented = (bookId: number) => {
   return AppDataSource.getRepository(Rentals).findOne({
     where: {
-      book_id: {id: bookId},
-      returned: false
+      book_id: { id: bookId },
+      returned: false,
     },
     order: {
       id: "DESC",
-    }
+    },
   });
 };
 
@@ -42,8 +42,6 @@ export class RentalController {
     }
 
     const isRented = await isBookRented(book);
-
-    console.log(isRented);
 
     if (isRented) {
       return "this book already rented";

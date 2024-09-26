@@ -1,22 +1,22 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm"
-import { Authors } from "./Authors"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+import { Authors } from "./Authors";
 
 @Entity()
 export class Books {
-    [x: string]: any
+  [x: string]: any;
 
-    @PrimaryGeneratedColumn()
-    id: number
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    title: string
+  @Column()
+  title: string;
 
-    @Column()
-    published_date: Date
+  @Column()
+  published_date: Date;
 
-    @Column()
-    genre: string
+  @Column()
+  genre: string;
 
-    @ManyToOne(type => Authors, author => author.books)
-    author_id: Authors
+  @ManyToOne((type) => Authors, (author) => author.books)
+  author_id: Authors;
 }

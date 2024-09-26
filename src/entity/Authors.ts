@@ -1,18 +1,18 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()
 export class Authors {
-    [x: string]: any
+  [x: string]: any;
 
-    @PrimaryGeneratedColumn()
-    id: number
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    name: string
+  @Column()
+  name: string;
 
-    @Column()
-    birthdate: Date
+  @Column()
+  birthdate: Date;
 
-    @Column()
-    country: string
+  @Column()
+  country: string;
 }
